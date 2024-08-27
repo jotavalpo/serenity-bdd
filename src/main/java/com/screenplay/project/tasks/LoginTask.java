@@ -7,15 +7,11 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.SendKeys;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.util.EnvironmentVariables;
 
-import static com.screenplay.project.ui.HomeDemoBlazeUI.*;
-import static com.screenplay.project.utils.Constants.TIME_SHORT;
-import static net.serenitybdd.screenplay.actions.SendKeys.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static com.screenplay.project.pages.HomePage.*;
+import static com.screenplay.project.pages.LoginPage.*;
 
 @Slf4j
 @AllArgsConstructor
@@ -29,8 +25,8 @@ public class LoginTask implements Task {
     @Step("{0} inicia sesion con las credenciales validas")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(BTN_MODAL_LOGIN),
-                Enter.theValue(usuario).into(INPUT_USUARIO),
+                Click.on(LINK_LOGIN),
+                Enter.theValue(usuario).into(INPUT_USERNAME),
                 Enter.theValue(password).into(INPUT_PASSWORD),
                 Click.on(BTN_LOGIN)
         );

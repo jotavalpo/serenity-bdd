@@ -5,7 +5,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.util.EnvironmentVariables;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -22,7 +21,6 @@ public class AbrirSitio implements Task {
     private String webUrl;
 
     @Override
-    @Step("{0} abre el navegador web")
     public <T extends Actor> void performAs(T actor) {
 
         String pathWebURl = EnvironmentSpecificConfiguration.from(environmentVariables).getProperty(webUrl);
